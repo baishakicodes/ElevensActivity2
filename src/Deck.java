@@ -1,6 +1,8 @@
 /**
  * Created by Teacher on 1/7/2019.
  */
+import com.sun.xml.internal.ws.client.sei.ValueSetter;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -33,12 +35,26 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        ArrayList<Card> Deck = new ArrayList<Card>();
-        for(int i=0; i<suits.length; i++){
-            
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        cards = new ArrayList<Card>();
+        int suitsNum = 0;
+        int ranksNum = 0;
+        int pointsNum = 0;
+        for(int i=0; i<(ranks.length*suits.length); i++) {
+            if (ranksNum==ranks.length && pointsNum== values.length) {
+                ranksNum = 0;
+                pointsNum = 0;
+                suitsNum++;
+            }
+            cards.add(new Card(ranks[ranksNum], suits[suitsNum], values[pointsNum]));
+            ranksNum++;
+            pointsNum++;
+
         }
+        size = cards.size();
+        shuffle();
     }
+
 
 
     /**
@@ -47,6 +63,10 @@ public class Deck {
      */
     public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        if(size==0){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -55,6 +75,8 @@ public class Deck {
      */
     public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return cards.size()-1;
+
     }
 
     /**
@@ -72,6 +94,8 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        size--;
+        return cards.get(size);
     }
 
     /**

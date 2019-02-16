@@ -9,5 +9,10 @@ public class DeckTester {
      */
     public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        String[] ranks = {"A", "B", "C"};
+        String[] suits = {"Giraffes", "Lions","penguins"};
+        int[] pointValues = {2, 1,6};
+        Deck deck1 = new Deck(ranks, suits, pointValues);
+        System.out.println(deck1.toString());
     }
 }
