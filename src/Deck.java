@@ -36,7 +36,7 @@ public class Deck {
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
         /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        cards = new ArrayList<Card>();
+        this.cards = new ArrayList<Card>();
         int suitsNum = 0;
         int ranksNum = 0;
         int pointsNum = 0;
@@ -94,8 +94,11 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        size--;
-        return cards.get(size);
+       if(this.isEmpty()==true) {
+           size--;
+           return cards.get(size);
+       }
+       return null;
     }
 
     /**
