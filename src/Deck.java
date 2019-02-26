@@ -89,6 +89,11 @@ public class Deck {
         Card[] shuffled = new Card[52];
         for(int k =0; k<52; k++){
             int j = (int) (Math.random()*51+1);
+            if(cards[j]== null){
+                j = (int) (Math.random()*51+1);
+            }
+            cards[j] = shuffled[k];
+            cards[j] = null;
         }
 
     }
