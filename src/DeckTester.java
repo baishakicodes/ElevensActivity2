@@ -13,6 +13,7 @@ public class DeckTester {
         String[] suits = {"Giraffes", "Lions","penguins"};
         int[] pointValues = {2, 1,6};
         Deck deck1 = new Deck(ranks, suits, pointValues);
+        //deck1.shuffle();
         System.out.println(deck1.toString());
     }
 }

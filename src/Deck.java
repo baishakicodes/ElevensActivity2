@@ -52,7 +52,7 @@ public class Deck {
 
         }
         size = cards.size();
-        shuffle();
+        this.shuffle();
     }
 
 
@@ -85,15 +85,15 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-        Card[] cards = new Card[52];
-        Card[] shuffled = new Card[52];
-        for(int k =0; k<52; k++){
-            int j = (int) (Math.random()*51+1);
-            if(cards[j]== null){
-                j = (int) (Math.random()*51+1);
-            }
-            cards[j] = shuffled[k];
-            cards[j] = null;
+
+        //I know K is supposed to start at 51 but I'm testing this out on a smaller deck of cards so
+        //I made k start at size-1 to test, I 'll change it later when we make a real deck of 52 cards
+        for(int k =size-1; k>0; k--){
+            int r = (int) (Math.random()*k+1);
+            Card temp = cards.get(k);
+            cards.set(k, cards.get(r));
+            cards.set(r, temp);
+
         }
 
     }
