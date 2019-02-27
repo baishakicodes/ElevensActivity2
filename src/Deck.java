@@ -41,7 +41,7 @@ public class Deck {
         int ranksNum = 0;
         int pointsNum = 0;
         for(int i=0; i<(ranks.length*suits.length); i++) {
-            if (ranksNum==ranks.length && pointsNum== values.length) {
+            if (ranksNum == ranks.length && pointsNum == values.length) {
                 ranksNum = 0;
                 pointsNum = 0;
                 suitsNum++;
@@ -49,11 +49,13 @@ public class Deck {
             cards.add(new Card(ranks[ranksNum], suits[suitsNum], values[pointsNum]));
             ranksNum++;
             pointsNum++;
-
         }
         size = cards.size();
         this.shuffle();
+
+
     }
+
 
 
 
@@ -75,7 +77,7 @@ public class Deck {
      */
     public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        return cards.size()-1;
+        return cards.size();
 
     }
 
